@@ -157,19 +157,22 @@ def main():
         
         screen.blit(bg_img, [0, 0])
         
-        for i, bomb in enumerate(bombs):
-            if bomb != None:
-                if bird.rct.colliderect(bomb.rct):
-                    # ゲームオーバー時に，こうかとん画像を切り替え，1秒間表示させる
-                    bird.change_img(8, screen)
-                    pg.display.update()
-                    time.sleep(1)
-                    return
-
-            if(beam != None and bomb != None):
-                if(bomb.rct.colliderect(beam.rct)):
-                    bombs.pop(i)
-                    beam = None
+<<<<<<< HEAD
+        
+=======
+        if bomb != None:
+          if bird.rct.colliderect(bomb.rct):
+                # ゲームオーバー時に，こうかとん画像を切り替え，1秒間表示させる
+                bird.change_img(8, screen)
+                pg.display.update()
+                time.sleep(1)
+                return
+        
+        if(beam != None and bomb != None):
+            if(bomb.rct.colliderect(beam.rct)):
+                bomb = None
+                beam = None
+>>>>>>> happy
 
 
         key_lst = pg.key.get_pressed()
